@@ -1,0 +1,16 @@
+<ion-view id="Progress" view-title="Progress Page"<i class="icon ion-android-walk placeholder-icon"></i> 
+
+  <ion-content class="padding">
+
+    <img class="img-responsive img-rounder" src="http://www.healthcaresales101.com/wp-content/uploads/2014/09/Competition21.jpg">
+    <h3><em>Let's start losing...</em></h3>
+  <div ng-repeat="user in userList">
+<p>{{user.username}}</p>
+<div  class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow={{steps}} aria-valuemin="0" aria-valuemax="6000" style="width: 60%;">
+    <span class="sr-only">60% Complete</span>
+  </div>
+</div>
+</div>
+  </ion-content>
+</ion-view>

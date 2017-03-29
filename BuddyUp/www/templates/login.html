@@ -1,0 +1,44 @@
+<!-- <ion-view view-title="Login">
+  <ion-content>
+     -->
+
+    <!-- <form ng-submit="auth.login.submit($event)">
+        <h2>LETS START LOSING....</h2>
+        <fieldset>
+        <input required placeholder="username" type="username" ng-model="auth.payloads.login.username" />
+        </fieldset>
+        <fieldset>
+        <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password" />
+        </fieldset>
+        <button type="submit">Login</button>
+      <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+    </form> -->
+
+  <!-- </ion-content>
+</ion-view> -->
+<ion-view id="Header" view-title="<b><em>A Journey to Lose....</b></em>" name="login-view">
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="registerdata.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="registerdata.password">
+          </label>
+      </div>
+      <button class="button button-block icon-left ion-heart button-calm" ng-click="register()">Register</button>
+    </br>
+  </br>
+</br>
+</br>
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="logindata.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="logindata.password">
+          </label>
+      </div>
+      <button class="button button-block button-royal icon-left ion-star button-positive" ng-click="login()">Welcome Back</button>
+  </ion-content>
+</ion-view>
