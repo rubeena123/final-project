@@ -12,7 +12,9 @@ var UserSchema = new mongoose.Schema({
     created: {
         type: Number,
         default: () => Date.now()
-    }
+    },
+
+    steps: Number,
 
 });
 

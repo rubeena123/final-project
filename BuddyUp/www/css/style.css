@@ -1,6 +1,28 @@
 /* Empty. Add your own CSS if you like */
 
 #Progress{
-  background-color: black;
+  background: white;
 
+
+}
+#tab{
+  color: orange;
+  font-family: 'Cookie', cursive;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+#names{
+
+color: black;
+font-family: 'Spirax', cursive;
+letter-spacing: 1px;
+font-size: 20px;
+}
+
+#mybar{
+  color: red;
+  font-family: 'Spirax', cursive;
+  letter-spacing: 1px;
+  font-size: 30px;
 }

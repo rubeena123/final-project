@@ -2,11 +2,22 @@ angular.module('starter.controllers', [])
 .config(function($httpProvider){
   $httpProvider.defaults.withCredentials=true;
 })
-.controller('DashCtrl', function($scope,$http) {
+.controller('DashCtrl', function($scope,$http, $state) {
+
+  $scope.user = JSON.parse( localStorage.getItem('user') )
+
+  $scope.removeMe = function(user){
+    if($scope.user){
+    return user._id !== $scope.user._id
+    }
+    else {
+      return true
+    }
+  }
 
   $http({
         method : 'GET',
-        url    : 'http://localhost:3000/api/user'
+        url    : 'http://10.25.15.32:3000/api/user'
       })
 
 
@@ -17,7 +28,86 @@ angular.module('starter.controllers', [])
 
 
 
+
+
+      document.addEventListener('deviceready', function () {
+        cordova.plugins.backgroundMode.enable();
+        // cordova.plugins.backgroundMode.moveToBackground()
+        // cordova.plugins.backgroundMode.disable();
+        setTimeout(function(){
+          console.log('BG', cordova.plugins.backgroundMode.isActive());
+        }, 5000)
+
+
+          // var success = function (message) {
+          //     console.log(message)
+          // }
+          //
+          // var failure = function () {
+          //     console.log("Error calling CordovaStepCounter Plugin! :(");
+          // }
+          //
+          // // Start the step counter
+          // // startingOffset will be added to the total steps counted in this session.
+          // // ie. say you have already recorded 150 steps for a certain activity, then
+          // // the step counter records 50. The getStepCount method will then return 200.
+          // var startingOffset = 0;
+          // stepcounter.start(startingOffset, success, failure);
+          //
+          // // Stop the step counter
+          // // stepcounter.stop(success, failure);
+          //
+          // // Get the amount of steps for today (or -1 if it no data given)
+          // stepcounter.getTodayStepCount(success, failure);
+          //
+          //
+          // // Get the amount of steps since the start command has been called
+          // stepcounter.getStepCount(success, failure);
+
+          // Returns true/false if Android device is running >API level 19 && has the step counter API available
+          // stepcounter.deviceCanCountSteps(success, failure);
+
+          // Get the step history (JavaScript object)
+          // sample result :
+          //{
+          //  "2015-01-01":{"offset": 123, "steps": 456},
+          //  "2015-01-02":{"offset": 579, "steps": 789}
+          //  ...
+          //}
+          stepcounter.getHistory(
+              function (historyData) {
+                  // console.log('HISTORY!')
+
+                  for(var key in historyData){
+                    console.log(key, historyData[key].steps)
+                    $scope.history=historyData[key].steps;
+                  }
+
+                  $scope.$apply()
+                  console.log($scope)
+
+                  // you would want to update the user in the DB with this step value
+
+
+                  // $scope.$apply(function(){
+                  //   $scope.history = historyData
+                  //
+                  // })
+                  // success(historyData);
+              }
+              // failure
+          );
+      }, false)
+
+      $scope.logout= function(){
+      $scope.user=null;
+      localStorage.removeItem('user')
+      $state.go('login')
+
+      }
+
 })
+
 
 
 

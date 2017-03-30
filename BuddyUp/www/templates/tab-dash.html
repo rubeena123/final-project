@@ -1,16 +1,30 @@
-<ion-view id="Progress" view-title="Progress Page"<i class="icon ion-android-walk placeholder-icon"></i> 
+<ion-view view-title="Progress Page"<i class="icon ion-android-walk placeholder-icon"></i>
 
-  <ion-content class="padding">
-
+  <ion-content id="Progress" class="padding">
     <img class="img-responsive img-rounder" src="http://www.healthcaresales101.com/wp-content/uploads/2014/09/Competition21.jpg">
-    <h3><em>Let's start losing...</em></h3>
-  <div ng-repeat="user in userList">
-<p>{{user.username}}</p>
+    <div><h3 id="tab" class="text-center">Let's start losing...</h3></div>
+    <div>
+
+      <div id="mybar">
+      <p>{{user.username}}</p>
+      <div  class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{history}}" aria-valuemin="0" aria-valuemax="6000" style="width : {{(history / 6000) * 100}}%">
+
+      </div>
+      </div>
+
+      </div>
+
+  <div id="names" ng-repeat="user in userList | filter:removeMe">
+  <p>{{user.username}}</p>
 <div  class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow={{steps}} aria-valuemin="0" aria-valuemax="6000" style="width: 60%;">
-    <span class="sr-only">60% Complete</span>
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{user.steps}}" aria-valuemin="0" aria-valuemax="6000" style="width : {{(user.steps / 6000) * 100}}%">
+
   </div>
 </div>
+
 </div>
-  </ion-content>
+
+</ion-content>
+<button class="button button-block button-dark" ng-click="logout()" >Logout</button>
 </ion-view>

@@ -22,12 +22,11 @@ res.send(users);
       } else {
         console.log('New user created in MongoDB:', user);
         req.session.uid = user._id; // this is what keeps our user session on the back end!
-        res.send({
-          message: 'Register success'
-        }); // send a success message
+        res.send(user); // send a success message
       }
     });
   },
+
 
   loginUser : (req, res) => { // form post submission
       console.info('auth.login.payload:', req.body);
@@ -55,10 +54,17 @@ res.send(users);
                       res.status(403).send("failed to log in");
                   } else {
                       req.session.uid = user._id; // this is what keeps our user session on the back end!
-                      res.send({ message: 'Login success' }); // send a success message
-                  }
+                      res.send(user); // send a success message
+                  };
+
+
               });
           }
       });
-  }
+  },
+
+  // User.update({_id : req.params.steps}, req.body, (err, update)=>{
+  //
+  // })
+
 }

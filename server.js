@@ -33,7 +33,7 @@ var sessionsMiddleware = clientSessions({
 var cors = require('cors');
 
 app.use(cors({
-    origin: 'http://10.25.15.31:8100',
+    origin: 'http://10.25.15.32:8100',
     optionsSuccessStatus: 200,
     credentials: true,
     // preflightContinue : true
