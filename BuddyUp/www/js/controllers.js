@@ -2,9 +2,14 @@ angular.module('starter.controllers', [])
 .config(function($httpProvider){
   $httpProvider.defaults.withCredentials=true;
 })
-.controller('DashCtrl', function($scope,$http, $state) {
+.controller('DashCtrl', function($scope,$http, $state, $cordovaVibration) {
 
-  $scope.user = JSON.parse( localStorage.getItem('user') )
+
+
+  $scope.$on('$ionicView.enter', function(){
+    $scope.user = JSON.parse( localStorage.getItem('user') )
+
+  })
 
   $scope.removeMe = function(user){
     if($scope.user){
@@ -15,9 +20,10 @@ angular.module('starter.controllers', [])
     }
   }
 
+
   $http({
         method : 'GET',
-        url    : 'http://10.25.15.32:3000/api/user'
+        url    : 'http://10.25.15.30:3000/api/user'
       })
 
 
@@ -98,7 +104,7 @@ angular.module('starter.controllers', [])
               // failure
           );
       }, false)
-
+// LOG OUT FUNCTION
       $scope.logout= function(){
       $scope.user=null;
       localStorage.removeItem('user')
@@ -106,6 +112,26 @@ angular.module('starter.controllers', [])
 
       }
 
+//Poke function
+      $scope.poke=function(person){
+        $cordovaVibration.vibrate(500);
+        alert($scope.user.username+" "+ "Poked"+" " + person.username)
+
+      }
+//Nudge function
+      $scope.nudge=function(person){
+        $cordovaVibration.vibrate(1000);
+        alert($scope.user.username+" "+ "Nudged"+" " + person.username)
+
+      }
+//Kick function
+      $scope.kick=function(person){
+        $cordovaVibration.vibrate([2000,1000,2000]);
+        alert($scope.user.username+" "+ "Kicked"+" " + person.username)
+      }
+
+
+$scope.date=new Date().toLocaleDateString()
 })
 
 

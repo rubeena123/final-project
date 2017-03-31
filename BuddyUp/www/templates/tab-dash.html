@@ -2,29 +2,69 @@
 
   <ion-content id="Progress" class="padding">
     <img class="img-responsive img-rounder" src="http://www.healthcaresales101.com/wp-content/uploads/2014/09/Competition21.jpg">
-    <div><h3 id="tab" class="text-center">Let's start losing...</h3></div>
-    <div>
+    <div > <h3 id="tab" class="text-center">{{date}}<br>
+      Let's start losing...</h3></div>
+      <br>
+      <br>
 
-      <div id="mybar">
-      <p>{{user.username}}</p>
+      <div class="mybar">
+      <span>{{user.username}}
+
+    <!-- <button class="poke" ng-click="poke(user)" ion-button color="secondary">Poke</button>
+    <button class="nudge" ng-click="nudge()" ion-button color="danger">Nudge</button>
+    <button class="kick" ng-click="kick()" ion-button color="secondary">Kick</button> -->
+      </span>
       <div  class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="{{history}}" aria-valuemin="0" aria-valuemax="6000" style="width : {{(history / 6000) * 100}}%">
+      <div class="progress-bar"  role="progressbar" aria-valuenow="{{history}}" aria-valuemin="0" aria-valuemax="6000" style="width : {{(history / 6000) * 100}}%"></div>
+      <div class='world' ng-show="(history/1813) >= 1">
+  <div class='delay-1'></div>
+  <div class='delay-2'></div>
+  <div class='delay-3'></div>
+  <div class='delay-4'></div>
+  <div class='delay-5'></div>
+  <div class='delay-6'></div>
+  <div class='delay-7'></div>
+  <div class='delay-8'></div>
+  <div class='delay-9'></div>
+  <div class='delay-10'></div>
+  <div class='delay-11'></div>
+  <div class='delay-12'></div>
+  <div class='delay-13'></div>
+  <div class='delay-14'></div>
+  <div class='delay-15'></div>
+  <div class='delay-16'></div>
+  <div class='delay-17'></div>
+  <div class='delay-18'></div>
+  <div class='delay-19'></div>
+  <div class='delay-20'></div>
+
+</div>
+      </div>
 
       </div>
-      </div>
 
-      </div>
-
-  <div id="names" ng-repeat="user in userList | filter:removeMe">
-  <p>{{user.username}}</p>
-<div  class="progress">
+  <div class="names" ng-repeat="user in userList | filter:removeMe">
+  <span>{{user.username}}
+  <button class="poke" ng-click="poke(user)" ion-button color="secondary">Poke</button>
+  <button class="nudge" ng-click="nudge(user)" ion-button color="danger">Nudge</button>
+  <button class="kick" ng-click="kick(user)" ion-button color="secondary">Kick</button>
+</span>
+  <div  class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="{{user.steps}}" aria-valuemin="0" aria-valuemax="6000" style="width : {{(user.steps / 6000) * 100}}%">
 
   </div>
-</div>
 
 </div>
 
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- <button class="button round button-secondary"  style="color: white;background-color:purple ; margin-left: 25%; margin-bottom: 10px "ng-click="logout()" >Logout and give up</button> -->
+  <button class="button button-block icon-center ion-social-tux button-calm" ng-click="logout()">Logout and give up</button>
 </ion-content>
-<button class="button button-block button-dark" ng-click="logout()" >Logout</button>
+
 </ion-view>

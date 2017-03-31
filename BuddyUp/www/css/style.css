@@ -1,28 +1,488 @@
 /* Empty. Add your own CSS if you like */
 
 #Progress{
-  background: white;
+  background:	#708090;
 
 
+}
+.progress {
+  position: relative;
 }
 #tab{
   color: orange;
   font-family: 'Cookie', cursive;
   letter-spacing: 2px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
-#names{
+.names{
 
-color: black;
+color: white;
 font-family: 'Spirax', cursive;
 letter-spacing: 1px;
 font-size: 20px;
 }
-
-#mybar{
-  color: red;
+.mybar{
+  color:white;
   font-family: 'Spirax', cursive;
   letter-spacing: 1px;
   font-size: 30px;
+}
+.poke{
+  color:white;
+  background:#6B8E23;
+  font-size: 15px;
+}
+
+.nudge{
+  color:white;
+  background: blue;
+  font-size: 15px;
+}
+.kick{
+  color:white;
+  background: orange;
+  font-size: 15px;
+}
+
+.world {
+  /*width: 250px;*/
+  /*height: 250px;*/
+  position: absolute;
+  /*left: 50%;*/
+  /*top: 50%;*/
+  left: 50px;
+  bottom:-3px;
+  /*margin-top: -125px;*/
+}
+.world > div {
+  float: left;
+  width: 25px;
+  height: 25px;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.delay-1 {
+  animation-delay: 2.74725s;
+}
+
+.delay-2 {
+  animation-delay: 1.49451s;
+}
+
+.delay-3 {
+  animation-delay: 0.24176s;
+}
+
+.delay-4 {
+  animation-delay: 2.98901s;
+}
+
+.delay-5 {
+  animation-delay: 1.73626s;
+}
+
+.delay-6 {
+  animation-delay: 0.48352s;
+}
+
+.delay-7 {
+  animation-delay: 3.23077s;
+}
+
+.delay-8 {
+  animation-delay: 1.97802s;
+}
+
+.delay-9 {
+  animation-delay: 0.72527s;
+}
+
+.delay-10 {
+  animation-delay: 3.47253s;
+}
+
+.delay-11 {
+  animation-delay: 2.21978s;
+}
+
+.delay-12 {
+  animation-delay: 0.96703s;
+}
+
+.delay-13 {
+  animation-delay: 3.71429s;
+}
+
+.delay-14 {
+  animation-delay: 2.46154s;
+}
+
+.delay-15 {
+  animation-delay: 1.20879s;
+}
+
+.delay-16 {
+  animation-delay: 3.95604s;
+}
+
+.delay-17 {
+  animation-delay: 2.7033s;
+}
+
+.delay-18 {
+  animation-delay: 1.45055s;
+}
+
+.delay-19 {
+  animation-delay: 0.1978s;
+}
+
+.delay-20 {
+  animation-delay: 2.94505s;
+}
+
+.delay-21 {
+  animation-delay: 1.69231s;
+}
+
+.delay-22 {
+  animation-delay: 0.43956s;
+}
+
+.delay-23 {
+  animation-delay: 3.18681s;
+}
+
+.delay-24 {
+  animation-delay: 1.93407s;
+}
+
+.delay-25 {
+  animation-delay: 0.68132s;
+}
+
+.delay-26 {
+  animation-delay: 3.42857s;
+}
+
+.delay-27 {
+  animation-delay: 2.17582s;
+}
+
+.delay-28 {
+  animation-delay: 0.92308s;
+}
+
+.delay-29 {
+  animation-delay: 3.67033s;
+}
+
+.delay-30 {
+  animation-delay: 2.41758s;
+}
+
+.delay-31 {
+  animation-delay: 1.16484s;
+}
+
+.delay-32 {
+  animation-delay: 3.91209s;
+}
+
+.delay-33 {
+  animation-delay: 2.65934s;
+}
+
+.delay-34 {
+  animation-delay: 1.40659s;
+}
+
+.delay-35 {
+  animation-delay: 0.15385s;
+}
+
+.delay-36 {
+  animation-delay: 2.9011s;
+}
+
+.delay-37 {
+  animation-delay: 1.64835s;
+}
+
+.delay-38 {
+  animation-delay: 0.3956s;
+}
+
+.delay-39 {
+  animation-delay: 3.14286s;
+}
+
+.delay-40 {
+  animation-delay: 1.89011s;
+}
+
+.delay-41 {
+  animation-delay: 0.63736s;
+}
+
+.delay-42 {
+  animation-delay: 3.38462s;
+}
+
+.delay-43 {
+  animation-delay: 2.13187s;
+}
+
+.delay-44 {
+  animation-delay: 0.87912s;
+}
+
+.delay-45 {
+  animation-delay: 3.62637s;
+}
+
+.delay-46 {
+  animation-delay: 2.37363s;
+}
+
+.delay-47 {
+  animation-delay: 1.12088s;
+}
+
+.delay-48 {
+  animation-delay: 3.86813s;
+}
+
+.delay-49 {
+  animation-delay: 2.61538s;
+}
+
+.delay-50 {
+  animation-delay: 1.36264s;
+}
+
+.delay-51 {
+  animation-delay: 0.10989s;
+}
+
+.delay-52 {
+  animation-delay: 2.85714s;
+}
+
+.delay-53 {
+  animation-delay: 1.6044s;
+}
+
+.delay-54 {
+  animation-delay: 0.35165s;
+}
+
+.delay-55 {
+  animation-delay: 3.0989s;
+}
+
+.delay-56 {
+  animation-delay: 1.84615s;
+}
+
+.delay-57 {
+  animation-delay: 0.59341s;
+}
+
+.delay-58 {
+  animation-delay: 3.34066s;
+}
+
+.delay-59 {
+  animation-delay: 2.08791s;
+}
+
+.delay-60 {
+  animation-delay: 0.83516s;
+}
+
+.delay-61 {
+  animation-delay: 3.58242s;
+}
+
+.delay-62 {
+  animation-delay: 2.32967s;
+}
+
+.delay-63 {
+  animation-delay: 1.07692s;
+}
+
+.delay-64 {
+  animation-delay: 3.82418s;
+}
+
+.delay-65 {
+  animation-delay: 2.57143s;
+}
+
+.delay-66 {
+  animation-delay: 1.31868s;
+}
+
+.delay-67 {
+  animation-delay: 0.06593s;
+}
+
+.delay-68 {
+  animation-delay: 2.81319s;
+}
+
+.delay-69 {
+  animation-delay: 1.56044s;
+}
+
+.delay-70 {
+  animation-delay: 0.30769s;
+}
+
+.delay-71 {
+  animation-delay: 3.05495s;
+}
+
+.delay-72 {
+  animation-delay: 1.8022s;
+}
+
+.delay-73 {
+  animation-delay: 0.54945s;
+}
+
+.delay-74 {
+  animation-delay: 3.2967s;
+}
+
+.delay-75 {
+  animation-delay: 2.04396s;
+}
+
+.delay-76 {
+  animation-delay: 0.79121s;
+}
+
+.delay-77 {
+  animation-delay: 3.53846s;
+}
+
+.delay-78 {
+  animation-delay: 2.28571s;
+}
+
+.delay-79 {
+  animation-delay: 1.03297s;
+}
+
+.delay-80 {
+  animation-delay: 3.78022s;
+}
+
+.delay-81 {
+  animation-delay: 2.52747s;
+}
+
+.delay-82 {
+  animation-delay: 1.27473s;
+}
+
+.delay-83 {
+  animation-delay: 0.02198s;
+}
+
+.delay-84 {
+  animation-delay: 2.76923s;
+}
+
+.delay-85 {
+  animation-delay: 1.51648s;
+}
+
+.delay-86 {
+  animation-delay: 0.26374s;
+}
+
+.delay-87 {
+  animation-delay: 3.01099s;
+}
+
+.delay-88 {
+  animation-delay: 1.75824s;
+}
+
+.delay-89 {
+  animation-delay: 0.50549s;
+}
+
+.delay-90 {
+  animation-delay: 3.25275s;
+}
+
+.delay-91 {
+  animation-delay: 2s;
+}
+
+.delay-92 {
+  animation-delay: 0.74725s;
+}
+
+.delay-93 {
+  animation-delay: 3.49451s;
+}
+
+.delay-94 {
+  animation-delay: 2.24176s;
+}
+
+.delay-95 {
+  animation-delay: 0.98901s;
+}
+
+.delay-96 {
+  animation-delay: 3.73626s;
+}
+
+.delay-97 {
+  animation-delay: 2.48352s;
+}
+
+.delay-98 {
+  animation-delay: 1.23077s;
+}
+
+.delay-99 {
+  animation-delay: 3.97802s;
+}
+
+.delay-100 {
+  animation-delay: 2.72527s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg) scale3d(1, 1, 1);
+    background: orange;
+  }
+  25%, 75% {
+    transform: rotate3d(0, 0, 1, 90deg) scale3d(0, 0, 1);
+    background: white;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 180deg) scale3d(1, 1, 1);
+    background: grey;
+  }
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #111;
 }
