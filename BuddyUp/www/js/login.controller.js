@@ -12,7 +12,7 @@ angular.module('starter.controllers')
         // console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
         $http({
             method : 'POST',
-            url : 'http://10.25.15.35:3000/login',
+            url : 'http://104.236.155.62:3000/login',
             data : {
                 username : $scope.logindata.username,
                 password : $scope.logindata.password
@@ -28,7 +28,7 @@ angular.module('starter.controllers')
         // console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
         $http({
             method : 'POST',
-            url : 'http://10.25.15.35:3000/register',
+            url : 'http://104.236.155.62:3000/register',
             data : {
                 username : $scope.registerdata.username,
                 password : $scope.registerdata.password,

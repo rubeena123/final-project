@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope,$http, $state, $cordovaVibration) {
 
 
-
+  $scope.user = JSON.parse( localStorage.getItem('user') )
   $scope.$on('$ionicView.enter', function(){
     $scope.user = JSON.parse( localStorage.getItem('user') )
 
@@ -29,7 +29,7 @@ $scope.percent=function(steps){
 
   $http({
         method : 'GET',
-        url    : 'http://10.25.15.35:3000/api/user'
+        url    : 'http://104.236.155.62:3000/api/user'
       })
 
 
@@ -97,7 +97,13 @@ $scope.percent=function(steps){
 
                   $scope.$apply()
                   console.log($scope)
+                  $scope.user.steps = $scope.history;
+                  $http({
+                        method : 'POST',
+                        url    : 'http://104.236.155.62:3000/api/user/'+$scope.user._id,
+                        data   : $scope.user
 
+                      })
                   // you would want to update the user in the DB with this step value
 
 

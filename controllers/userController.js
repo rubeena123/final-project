@@ -64,9 +64,10 @@ res.send(users);
   },
 
   updateUser : (req, res) =>{
-    console.info()
+    console.log('login.user',req.body)
 
-    $scope.update({_id : req.params.id}, req.body, (err, update)=>{
+    User.update({_id : req.params.id}, req.body, (err, update)=>{
+      res.send (true);
 
   })
 

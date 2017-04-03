@@ -14,6 +14,7 @@ module.exports = (app) => {
   }
 
   app.get('/api/user', UserController.getUsers)
+  app.post('/api/user/:id', UserController.updateUser)
 
   app.post('/register', UserController.registerUser);   // register form submission
 
