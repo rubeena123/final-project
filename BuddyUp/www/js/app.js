@@ -34,11 +34,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // .state('login', {
   //   url: '/login',
   //
-  //   templateUrl: 'templates/login.html',
+  //   templateUrl: './templates/login.html',
   //   controller: 'loginCtrl'
     .state('login', {
           url: '/login',
-          templateUrl: 'templates/login.html',
+          templateUrl: './templates/login.html',
           controller:'LoginCtrl'
 
 
@@ -48,7 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: './templates/tabs.html'
   })
 
   // Each tab has its own nav history stack:
@@ -57,41 +57,41 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/dash',
     views: {
       'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+        templateUrl: './templates/tab-dash.html',
         controller: 'DashCtrl'
       }
     }
   })
 
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
+  // .state('tab.chats', {
+  //     url: '/chats',
+  //     views: {
+  //       'tab-chats': {
+  //         templateUrl: './templates/tab-chats.html',
+  //         controller: 'ChatsCtrl'
+  //       }
+  //     }
+  //   })
+  //   .state('tab.chat-detail', {
+  //     url: '/chats/:chatId',
+  //     views: {
+  //       'tab-chats': {
+  //         templateUrl: './templates/chat-detail.html',
+  //         controller: 'ChatDetailCtrl'
+  //       }
+  //     }
+  //   })
+  //
+  // .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: './templates/tab-account.html',
+  //       controller: 'AccountCtrl'
+  //     }
+  //   }
+  // });
 
   // if none of the above states are matched, use this as the fallback
 

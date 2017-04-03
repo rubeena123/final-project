@@ -6,7 +6,9 @@
 
 .progress {
   position: relative;
-
+}
+ion-nav-view{
+  background-color: #fff;
 }
 #tab{
   color: orange;
@@ -35,14 +37,14 @@ font-size: 20px;
   color:white;
   background:#6B8E23;
   font-size: 15px;
-  /*float: right;*/
+  float: right;
 }
 
 .nudge{
   color:white;
   background: blue;
   font-size: 15px;
-  /*float: right;*/
+  float: right;
 }
 .kick{
   color:white;

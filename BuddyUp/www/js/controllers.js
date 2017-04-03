@@ -97,6 +97,8 @@ $scope.percent=function(steps){
 
                   $scope.$apply()
                   console.log($scope)
+
+                  if($scope.user){
                   $scope.user.steps = $scope.history;
                   $http({
                         method : 'POST',
@@ -104,6 +106,7 @@ $scope.percent=function(steps){
                         data   : $scope.user
 
                       })
+                    }
                   // you would want to update the user in the DB with this step value
 
 
