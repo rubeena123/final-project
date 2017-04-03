@@ -63,8 +63,12 @@ res.send(users);
       });
   },
 
-  // User.update({_id : req.params.steps}, req.body, (err, update)=>{
-  //
-  // })
+  updateUser : (req, res) =>{
+    console.info()
 
+    $scope.update({_id : req.params.id}, req.body, (err, update)=>{
+
+  })
+
+  },
 }

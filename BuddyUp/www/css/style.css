@@ -2,11 +2,11 @@
 
 #Progress{
   background:	#708090;
-
-
 }
+
 .progress {
   position: relative;
+
 }
 #tab{
   color: orange;
@@ -21,28 +21,34 @@ color: white;
 font-family: 'Spirax', cursive;
 letter-spacing: 1px;
 font-size: 20px;
+
 }
+
 .mybar{
   color:white;
   font-family: 'Spirax', cursive;
   letter-spacing: 1px;
-  font-size: 30px;
+  font-size: 20px;
 }
+
 .poke{
   color:white;
   background:#6B8E23;
   font-size: 15px;
+  /*float: right;*/
 }
 
 .nudge{
   color:white;
   background: blue;
   font-size: 15px;
+  /*float: right;*/
 }
 .kick{
   color:white;
   background: orange;
   font-size: 15px;
+  /*float: right;*/
 }
 
 .world {
@@ -64,6 +70,7 @@ font-size: 20px;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 
 .delay-1 {
   animation-delay: 2.74725s;

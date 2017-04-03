@@ -15,6 +15,7 @@ var UserSchema = new mongoose.Schema({
     },
 
     steps: Number,
+    phonenumber: Number,
 
 });
 

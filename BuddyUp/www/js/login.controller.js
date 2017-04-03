@@ -8,15 +8,16 @@ angular.module('starter.controllers')
       $state.go('tab.dash')
     }
     $scope.login = function() {
+      // $scope.loading = true;
         // console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
         $http({
             method : 'POST',
-            url : 'http://10.25.15.30:3000/login',
+            url : 'http://10.25.15.35:3000/login',
             data : {
                 username : $scope.logindata.username,
                 password : $scope.logindata.password
             }
-
+          // $scope.loading = false;
         })
         .then(function(response){
             localStorage.setItem('user', JSON.stringify(response.data))
@@ -27,10 +28,11 @@ angular.module('starter.controllers')
         // console.log("LOGIN user: " + $scope.data.username + " - PW: " + $scope.data.password);
         $http({
             method : 'POST',
-            url : 'http://10.25.15.30:3000/register',
+            url : 'http://10.25.15.35:3000/register',
             data : {
                 username : $scope.registerdata.username,
-                password : $scope.registerdata.password
+                password : $scope.registerdata.password,
+                phonenumber: $scope.registerdata.phonenumber,
             }
 
         })

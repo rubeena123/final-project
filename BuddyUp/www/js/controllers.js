@@ -20,10 +20,16 @@ angular.module('starter.controllers', [])
     }
   }
 
+$scope.percent=function(steps){
+  // console.log(steps);
+  // console.log(Math.floor((steps/ 6000) * 100))
+  return Math.floor((steps/ 6000) * 100)
+}
+
 
   $http({
         method : 'GET',
-        url    : 'http://10.25.15.30:3000/api/user'
+        url    : 'http://10.25.15.35:3000/api/user'
       })
 
 
@@ -106,28 +112,49 @@ angular.module('starter.controllers', [])
       }, false)
 // LOG OUT FUNCTION
       $scope.logout= function(){
-      $scope.user=null;
-      localStorage.removeItem('user')
-      $state.go('login')
+      if (confirm('Are you sure you want to GIVE UP and let your group DOWN?!!!')) {
+        $scope.user=null;
+        localStorage.removeItem('user')
+        $state.go('login')
+    return true;
+} else {
+    return false;
+}
+      // $scope.showPopup = function() {
+      // $scope.data = {};
+
 
       }
-
+      $scope.sendMsg = function(number, message){
+        sms.hasPermission(function(permission){
+          if(permission){
+            sms.send(number, message)
+          }
+          // else{
+          //   alert('no permissions')
+          // }
+        }, function(){
+          alert('Permissions failed!')
+        })
+      }
 //Poke function
       $scope.poke=function(person){
         $cordovaVibration.vibrate(500);
-        alert($scope.user.username+" "+ "Poked"+" " + person.username)
+        // alert($scope.user.username+" "+ "Poked"+" " + person.username)
+        $scope.sendMsg(person.phonenumber, 'You got poked by '+ $scope.user.username)
 
       }
 //Nudge function
       $scope.nudge=function(person){
         $cordovaVibration.vibrate(1000);
-        alert($scope.user.username+" "+ "Nudged"+" " + person.username)
-
+        // alert($scope.user.username+" "+ "Nudged"+" " + person.username)
+        $scope.sendMsg(person.phonenumber, 'You got Nudged by '+ $scope.user.username)
       }
 //Kick function
       $scope.kick=function(person){
-        $cordovaVibration.vibrate([2000,1000,2000]);
-        alert($scope.user.username+" "+ "Kicked"+" " + person.username)
+        $cordovaVibration.vibrate(1500);
+        // alert($scope.user.username+" "+ "Kicked"+" " + person.username)
+        $scope.sendMsg(person.phonenumber, 'You got Kicked by '+ $scope.user.username)
       }
 
 
