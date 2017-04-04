@@ -6,9 +6,22 @@ angular.module('starter.controllers', [])
 
 
   $scope.user = JSON.parse( localStorage.getItem('user') )
+
   $scope.$on('$ionicView.enter', function(){
     $scope.user = JSON.parse( localStorage.getItem('user') )
 
+    if(!$scope.maxvalue){
+    $scope.maxvalue=parseInt( prompt("Enter your steps goal for the day:") );
+    if($scope.user){
+      $scope.user.maxSteps = $scope.maxvalue;
+      $http({
+          method : 'POST',
+          url    : 'http://104.236.155.62:3000/api/user/'+$scope.user._id,
+          data   : $scope.user
+
+        })
+    }
+  }
   })
 
   $scope.removeMe = function(user){
@@ -20,10 +33,10 @@ angular.module('starter.controllers', [])
     }
   }
 
-$scope.percent=function(steps){
+$scope.percent=function(steps, max){
   // console.log(steps);
   // console.log(Math.floor((steps/ 6000) * 100))
-  var perc = Math.floor((steps/ $scope.maxvalue) * 100)
+  var perc = Math.floor((steps/ max) * 100)
   $scope.finish(perc);
   return perc
 }
@@ -38,6 +51,15 @@ else{
 }
 
 $scope.maxvalue=parseInt( prompt("Enter your steps goal for the day:") );
+if($scope.user){
+  $scope.user.maxSteps = $scope.maxvalue;
+  $http({
+      method : 'POST',
+      url    : 'http://104.236.155.62:3000/api/user/'+$scope.user._id,
+      data   : $scope.user
+
+    })
+}
 
 
   $http({

@@ -21,7 +21,7 @@ angular.module('starter.controllers')
         })
         .then(function(response){
             localStorage.setItem('user', JSON.stringify(response.data))
-            $state.go('tab.dash')
+            $state.transitionTo('tab.dash', {}, {reload : true})
         })
     }
     $scope.register = function() {
@@ -38,7 +38,7 @@ angular.module('starter.controllers')
         })
         .then(function(response){
             localStorage.setItem('user', JSON.stringify(response.data))
-            $state.go('tab.dash')
+            $state.transitionTo('tab.dash', {}, {reload : true})
         })
     }
 
