@@ -6,6 +6,11 @@
 
 .progress {
   position: relative;
+  color:orange;
+
+}
+.progress-text{
+  position: absolute;
 }
 ion-nav-view{
   background-color: #fff;

@@ -23,8 +23,21 @@ angular.module('starter.controllers', [])
 $scope.percent=function(steps){
   // console.log(steps);
   // console.log(Math.floor((steps/ 6000) * 100))
-  return Math.floor((steps/ 6000) * 100)
+  var perc = Math.floor((steps/ $scope.maxvalue) * 100)
+  $scope.finish(perc);
+  return perc
 }
+
+$scope.finish=function(percent){
+  if(percent >= 100){
+    return $cordovaVibration.vibrate(2000);
+  }
+else{
+  return false
+}
+}
+
+$scope.maxvalue=parseInt( prompt("Enter your steps goal for the day:") );
 
 
   $http({
@@ -155,13 +168,13 @@ $scope.percent=function(steps){
       }
 //Nudge function
       $scope.nudge=function(person){
-        $cordovaVibration.vibrate(1000);
+        $cordovaVibration.vibrate(500);
         // alert($scope.user.username+" "+ "Nudged"+" " + person.username)
         $scope.sendMsg(person.phonenumber, 'You got Nudged by '+ $scope.user.username)
       }
 //Kick function
       $scope.kick=function(person){
-        $cordovaVibration.vibrate(1500);
+        $cordovaVibration.vibrate(500);
         // alert($scope.user.username+" "+ "Kicked"+" " + person.username)
         $scope.sendMsg(person.phonenumber, 'You got Kicked by '+ $scope.user.username)
       }
