@@ -36,21 +36,21 @@ font-size: 20px;
 .poke{
   color:white;
   background:#6B8E23;
-  font-size: 15px;
+  font-size: 10px;
   float: right;
 }
 
 .nudge{
   color:white;
   background: blue;
-  font-size: 15px;
+  font-size: 10px;
   float: right;
 }
 .kick{
   color:white;
   background: orange;
-  font-size: 15px;
-  /*float: right;*/
+  font-size: 10px;
+  float: right;
 }
 
 .world {
