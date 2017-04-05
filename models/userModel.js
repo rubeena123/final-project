@@ -14,8 +14,8 @@ var UserSchema = new mongoose.Schema({
         default: () => Date.now()
     },
 
-    steps: Number,
-    maxSteps: Number,
+    steps: {type : Number, default : 0},
+    maxSteps: {type : Number, default : 3000},
     phonenumber: Number,
 
 });
