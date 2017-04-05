@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
   $httpProvider.defaults.withCredentials=true;
 })
 .controller('DashCtrl', function($scope,$http, $state, $cordovaVibration) {
-  console.log('CONTROLLER RUNNING');
+  // console.log('CONTROLLER RUNNING');
 
   $scope.user = JSON.parse( localStorage.getItem('user') )
 
@@ -37,7 +37,7 @@ $scope.percent=function(steps, max){
   // console.log(steps);
   // console.log(Math.floor((steps/ 6000) * 100))
   var perc = Math.floor((steps/ max) * 100)
-  $scope.finish(perc);
+
   return perc
 }
 
@@ -121,38 +121,52 @@ if($scope.user){
           //  "2015-01-02":{"offset": 579, "steps": 789}
           //  ...
           //}
-          stepcounter.getHistory(
-              function (historyData) {
-                  // console.log('HISTORY!')
 
-                  for(var key in historyData){
-                    console.log(key, historyData[key].steps)
-                    $scope.history=historyData[key].steps;
-                  }
+          function getSteps () {
+            stepcounter.getTodayStepCount(
+                function (historyData) {
+                    console.log('HISTORY!', historyData)
 
-                  $scope.$apply()
-                  console.log($scope)
+                    // for(var key in historyData){
+                    //   console.log(key, historyData[key].steps)
+                    //   $scope.history=historyData[key].steps;
+                    //
+                    // }
+                    $scope.history = historyData
 
-                  if($scope.user){
-                  $scope.user.steps = $scope.history;
-                  $http({
-                        method : 'POST',
-                        url    : 'http://104.236.155.62:3000/api/user/'+$scope.user._id,
-                        data   : $scope.user
-
-                      })
+                    // alert($scope.history)
+                    $scope.$apply()
+                    // console.log($scope)
+                    if(needFinish){
+                      $scope.finish(($scope.history / $scope.maxvalue) * 100);
+                      needFinish = false
                     }
-                  // you would want to update the user in the DB with this step value
+                    if($scope.user){
+                    $scope.user.steps = $scope.history;
+                    $http({
+                          method : 'POST',
+                          url    : 'http://104.236.155.62:3000/api/user/'+$scope.user._id,
+                          data   : $scope.user
+
+                        })
+                      }
+                    // you would want to update the user in the DB with this step value
 
 
-                  // $scope.$apply(function(){
-                  //   $scope.history = historyData
-                  //
-                  // })
-                  // success(historyData);
-              }
-              // failure
-          );
+                    // $scope.$apply(function(){
+                    //   $scope.history = historyData
+                    //
+                    // })
+                    // success(historyData);
+                }
+                // failure
+            , function(err){alert(err)});
+          }
+
+          var needFinish = true;
+          setInterval(getSteps, 5000)
+          getSteps()
+
       }, false)
 // LOG OUT FUNCTION
       $scope.logout= function(){
@@ -164,9 +178,6 @@ if($scope.user){
 } else {
     return false;
 }
-      // $scope.showPopup = function() {
-      // $scope.data = {};
-
 
       }
       $scope.sendMsg = function(number, message){

@@ -1,7 +1,14 @@
 /* Empty. Add your own CSS if you like */
+.nav-bar-block, .nav-bar-block * {
+  display: none;
+}
+.tabs-top > .tabs, .tabs.tabs-top{
+  top : 0px;
 
+}
 #Progress{
-  background:	#708090;
+  background:	black;
+  top:48px;
 }
 
 .progress {
@@ -482,15 +489,15 @@ font-size: 15px;
 @keyframes spin {
   0% {
     transform: rotate3d(0, 0, 0, 0deg) scale3d(1, 1, 1);
-    background: orange;
+    background: #A8A43B;
   }
   25%, 75% {
     transform: rotate3d(0, 0, 1, 90deg) scale3d(0, 0, 1);
-    background: white;
+    background: grey;
   }
   100% {
     transform: rotate3d(0, 0, 1, 180deg) scale3d(1, 1, 1);
-    background: grey;
+    background:orange;
   }
 }
 html, body {

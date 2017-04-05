@@ -1,21 +1,21 @@
-<ion-view view-title="Progress Page">
+<ion-view >
   <ion-content id="Progress" class="padding">
-    <button class="button button-outline pull-right ion-social-freebsd-devil button-energized" ng-click="logout()">
-      Log Out </button>
-  <br>
-  <br>
 
-    <img class="img-responsive img-rounder" src="http://www.healthcaresales101.com/wp-content/uploads/2014/09/Competition21.jpg">
     <div > <h3 id="tab" class="text-center">{{date}}<br>
-        Let's start losing...</h3></div>
+        The journey of a thousand miles begins with a single step...</h3></div>
+    <br>
+    <img class="img-responsive img-rounder" src="http://www.healthcaresales101.com/wp-content/uploads/2014/09/Competition21.jpg">
     <br>
     <br>
     <div class="mybar">
     <span>{{user.username}} entered {{maxvalue}} steps</span>
-
+    <!-- <div class="progress">
+      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+        <span class="sr-only">20% Complete</span>
+      </div> -->
   <div  class="progress">
     <span class="progress-text" style= "left : {{percent(history, maxvalue) >= 85 ? 85 : percent(history, maxvalue)}}%">{{percent(history, maxvalue)}}%</span>
-  <div class="progress-bar" role="progressbar" aria-valuenow="{{history}}" aria-valuemin="0" aria-valuemax={{maxvalue}} style= "width : {{percent(history, maxvalue) >= 100 ? 100 : percent(history, maxvalue)}}%"></div>
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{history}}" aria-valuemin="0" aria-valuemax={{maxvalue}} style= "width : {{percent(history, maxvalue) >= 100 ? 100 : percent(history, maxvalue)}}%"></div>
   <div class='world' ng-show="(history/maxvalue) >= 1">{{finish}}
   <div class='delay-1'></div>
   <div class='delay-2'></div>
@@ -49,7 +49,7 @@
   </span>
   <div  class="progress">
     <span class="progress-text" style= "left : {{percent(user.steps, user.maxSteps) >= 85 ? 85 : percent(user.steps, user.maxSteps)}}%">{{percent(user.steps, user.maxSteps)}}%</span>
-  <div class="progress-bar" role="progressbar" aria-valuenow="{{user.steps}}" aria-valuemin="0" aria-valuemax={{maxSteps}} style= "width : {{percent(user.steps, user.maxSteps) >= 100 ? 100 : percent(user.steps, user.maxSteps)}}%"> </div>
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{user.steps}}" aria-valuemin="0" aria-valuemax={{maxSteps}} style= "width : {{percent(user.steps, user.maxSteps) >= 100 ? 100 : percent(user.steps, user.maxSteps)}}%"> </div>
   <div class='world' ng-show="(user.steps/user.maxSteps) >= 1">{{finish}}
   <div class='delay-1'></div>
   <div class='delay-2'></div>
@@ -82,8 +82,8 @@
 <br>
 <br>
 <br>
-<!-- <button class="button round button-secondary"  style="color: white;background-color:purple ; margin-left: 25%; margin-bottom: 10px "ng-click="logout()" >Logout and give up</button> -->
-  <!-- <button class="button button-block icon-center ion-social-tux button-energized" ng-click="logout()">Logout and give up</button> -->
+<button class="button button-outline ion-social-freebsd-devil button-energized" ng-click="logout()">
+  Log Out </button>
 </ion-content>
 
 </ion-view>
