@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
   $httpProvider.defaults.withCredentials=true;
 })
 .controller('DashCtrl', function($scope,$http, $state, $cordovaVibration) {
-
+  console.log('CONTROLLER RUNNING');
 
   $scope.user = JSON.parse( localStorage.getItem('user') )
 
