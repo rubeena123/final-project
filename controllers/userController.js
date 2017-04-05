@@ -64,9 +64,10 @@ res.send(users);
   },
 
   updateUser : (req, res) =>{
-    console.log('login.user',req.body)
+    // console.log('login.user',req.body)
 
     User.update({_id : req.params.id}, req.body, (err, update)=>{
+      console.log(err, update)
       res.send (true);
 
   })

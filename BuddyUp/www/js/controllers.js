@@ -34,7 +34,7 @@ angular.module('starter.controllers', [])
   }
 
 $scope.percent=function(steps, max){
-  // console.log(steps);
+  console.log(steps, max);
   // console.log(Math.floor((steps/ 6000) * 100))
   var perc = Math.floor((steps/ max) * 100)
 
@@ -125,7 +125,7 @@ if($scope.user){
           function getSteps () {
             stepcounter.getTodayStepCount(
                 function (historyData) {
-                    console.log('HISTORY!', historyData)
+                    // console.log('HISTORY!', historyData)
 
                     // for(var key in historyData){
                     //   console.log(key, historyData[key].steps)
