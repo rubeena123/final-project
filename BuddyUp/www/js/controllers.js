@@ -142,6 +142,8 @@ if($scope.user){
                       needFinish = false
                     }
                     if($scope.user){
+                      $scope.user.maxSteps = $scope.maxvalue;
+                      
                     $scope.user.steps = $scope.history;
                     $http({
                           method : 'POST',
