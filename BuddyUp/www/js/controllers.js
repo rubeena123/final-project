@@ -34,7 +34,7 @@ angular.module('starter.controllers', [])
   }
 
 $scope.percent=function(steps, max){
-  console.log(steps, max);
+  // console.log(steps, max);
   // console.log(Math.floor((steps/ 6000) * 100))
   var perc = Math.floor((steps/ max) * 100)
 
@@ -143,7 +143,7 @@ if($scope.user){
                     }
                     if($scope.user){
                       $scope.user.maxSteps = $scope.maxvalue;
-                      
+
                     $scope.user.steps = $scope.history;
                     $http({
                           method : 'POST',
